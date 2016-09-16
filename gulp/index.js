@@ -103,8 +103,8 @@ gulp.task('html', function() {
   gulp.src(Ruta.src + '*.html')
     .pipe(includer())
     .pipe(htmlreplace({
-        'css':  Ruta.styles + NameFile.minifiedCss,
-        'js':  Ruta.js + NameFile.minifiedLibsJs
+        'css':  Ruta.styles + NameFile.minifiedCss
+        //'js':  Ruta.js + NameFile.minifiedLibsJs
     }))
     .pipe(injectSvg())
     .pipe(gulpif(conditionBuild, htmlmin({collapseWhitespace: true, conservativeCollapse: true, removeEmptyAttributes: true})))
